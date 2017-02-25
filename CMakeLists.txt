@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.2.0)
 project(raidix_core)
 
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
-set(CMAKE_CXX_FLAGS "-ferror-limit=100 -fspell-checking -Wunused-parameter -Wunreachable-code -Wall -std=c++11")
+set(CMAKE_CXX_FLAGS "-ferror-limit=100 -fspell-checking -Wunused-parameter -Wunreachable-code -Wall -std=c++11 -DBOOST_LOG_DYN_LINK")
 
 set(BOOST_COMPONENTS system thread signals timer filesystem locale regex serialization log program_options)
 

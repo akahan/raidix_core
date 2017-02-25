@@ -8,6 +8,7 @@
 #include <boost/asio.hpp>
 #include <boost/enable_shared_from_this.hpp>
 #include <boost/array.hpp>
+#include <boost/signals2.hpp>
 
 using boost::asio::ip::tcp;
 
@@ -33,6 +34,8 @@ class IPC_Server {
         : acceptor_( io_service, tcp::endpoint( addr, port ) ), socket_( io_service ) {
             do_accept();
         }
+
+        boost::signals2::signal<void()> on_accept;
 
     private:
         void do_accept() {
